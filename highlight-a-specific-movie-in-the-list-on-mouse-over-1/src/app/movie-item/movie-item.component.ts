@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Movie } from '../model/movie.model';
 
 @Component({
@@ -16,9 +16,8 @@ import { Movie } from '../model/movie.model';
       <button>Details</button>
     </div>
   `,
-  styleUrls: [ 'movie-item.component.scss' ]
+  styleUrls: ['movie-item.component.scss'],
 })
 export class MovieItemComponent {
-  movie  = input.required<Movie>();
+  movie = input.required<Movie>();
 }
-
