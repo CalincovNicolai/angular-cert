@@ -1,5 +1,7 @@
-import {Component, input} from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Movie } from '../model/movie.model';
+import { MillionDollarPipe } from '../pipes/million-dollar.pipe';
+import { MinToDurationPipe } from '../pipes/min-to-duration.pipe';
 
 @Component({
   selector: 'app-movie-item',
@@ -9,16 +11,16 @@ import { Movie } from '../model/movie.model';
         <h4>{{ movie().title }}</h4>
         <small class="subtitle">
           <span>Release date: {{ movie().release_date }}</span>
-          <span>Budget: $ {{ movie().budget }} million</span>
-          <span>Duration: {{ movie().duration }} min</span>
+          <span>Budget: {{ movie().budget | millionDollar }}</span>
+          <span>Duration: {{ movie().duration | minToDuration }}</span>
         </small>
       </div>
       <button>Details</button>
     </div>
   `,
-  styleUrls: [ 'movie-item.component.scss' ]
+  styleUrls: ['movie-item.component.scss'],
+  imports: [MillionDollarPipe, MinToDurationPipe],
 })
 export class MovieItemComponent {
-  movie  = input.required<Movie>();
+  movie = input.required<Movie>();
 }
-
