@@ -1,29 +1,28 @@
 export interface CarModel {
-  code:        string;
+  code: string;
   description: string;
-  colors:      Color[];
+  colors: Color[];
 }
 
 export interface Color {
-  code:        string;
+  code: string;
   description: string;
-  price:       number;
+  price: number;
 }
 
 export interface CarOptions {
-  configs:  Config[];
+  configs: Config[];
   towHitch: boolean;
-  yoke:     boolean;
+  yoke: boolean;
 }
 
 export interface Config {
-  id:          number;
+  id: number;
   description: string;
-  range:       number;
-  speed:       number;
-  price:       number;
+  range: number;
+  speed: number;
+  price: number;
 }
-
 
 export interface SelectedConfig {
   car: CarModel;
