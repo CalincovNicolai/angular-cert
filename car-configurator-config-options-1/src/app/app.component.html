@@ -1,0 +1,15 @@
+<div class="button-group">
+  <button>Step 1</button>
+  <button>
+    Step 2
+  </button>
+  <button>
+    Step 3
+  </button>
+</div>
+<app-step1 />
+<div>
+  @if (service.currentImage()) {
+    <img [src]="service.currentImage()" />
+  }
+</div>
