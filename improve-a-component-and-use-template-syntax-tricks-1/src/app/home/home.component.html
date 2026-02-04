@@ -1,0 +1,23 @@
+<div class="container">
+  <form>
+    @let movies = movies$ | async;
+    <fieldset>
+      <legend>Filters</legend>
+      <label for="title">Title</label>
+      <input #titleFilter type="text" name="title"
+             (input)="filter(titleFilter.value, yearFilter.value)"/>
+      <label for="releaseDate">Release year</label>
+      <input #yearFilter type="number" name="releaseDate"
+             (input)="filter(titleFilter.value, yearFilter.value)"/>
+    </fieldset>
+    <div>
+      {{movies?.length | i18nPlural:{'=0': 'No result', '=1': 'One result', 'other': '# results'} }} found
+    </div>
+  </form>
+
+  @for(movie of movies; track movie.id) {
+    <app-movie-item [movie]="movie" appHighlight [isFavorite]="favoritesService.isFavorite(movie)()" (toggleFavorite)="favoritesService.toggleFavorite(movie)">
+      <button [routerLink]="'details/'+ movie.id">Details</button>
+    </app-movie-item>
+  }
+</div>

@@ -1,0 +1,7 @@
+- By default, all movies are displayed and the filter box displays "11 results found"
+- Clicking on the "Details" button of any movie navigates to the details page of that movie.
+- Type "p" in the title filter. The filter box displays "8 results found"
+- Type "h" in the title filter. The filter box displays "2 results found"
+- Type "o" in the title filter. The filter box displays "One result found"
+- Type "t" in the title filter. The filter box displays "No result found"
+- Clear the title filter. All movies are displayed and the filter box displays "11 results found"
