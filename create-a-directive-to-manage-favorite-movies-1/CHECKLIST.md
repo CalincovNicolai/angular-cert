@@ -1,0 +1,4 @@
+- By default, all movies are displayed and none are displayed are favorites (no golden stars)
+- Click on the star icon of the first movie to add it as favorite. The star becomes golden.
+- Click on that same star icon again. The star is white again.
+- Try to toggle other movies as well. You should be able to add and remove favorites by clicking on the star icon.
