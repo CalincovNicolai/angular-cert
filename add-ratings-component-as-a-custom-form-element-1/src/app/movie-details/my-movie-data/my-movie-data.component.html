@@ -8,8 +8,8 @@
   <tbody>
   <tr>
     <td data-label="Rating">
-        <app-ratings  />
-        {{ 3 }}
+        <app-ratings [(ngModel)]="rating"  />
+        {{rating()}}
     </td>
   </tr>
   </tbody>
