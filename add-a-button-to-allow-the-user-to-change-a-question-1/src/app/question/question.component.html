@@ -1,9 +1,13 @@
 <p [innerHTML]="question().question"></p>
 <div>
   @for (answer of question().all_answers; track answer) {
-    <button (click)="buttonClicked(answer)"
+    <button
+      (click)="buttonClicked(answer)"
       [class]="getButtonClass(answer)"
-      [innerHTML]="answer">
-    </button>
+      [innerHTML]="answer"
+    ></button>
+  }
+  @if (canSwitch()) {
+    <button (click)="switch.emit(question())">Change question</button>
   }
 </div>

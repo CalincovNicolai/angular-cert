@@ -1,6 +1,7 @@
-@for (q of questions(); track q; let i = $index) {
-  <app-question [question]="q"
-    (change)="userAnswers[i] = $event">
+@for (q of questions(); track q.question; let i = $index) {
+  <app-question [question]="q" [canSwitch]="quizService.canSwitchQuestion()"
+    (change)="userAnswers[i] = $event" (switch)="switchQuestion($event)"
+  >
   </app-question>
 }
 <div>

@@ -1,10 +1,14 @@
 <div class="row">
   <div class="col-sm-11">
-    <select #category id="categorySelect" (change)="selectNewCategory(category.value)">
+    <select
+      #category
+      id="categorySelect"
+      (change)="selectNewCategory(category.value)"
+    >
       <option>Select category</option>
       @for (category of categories$ | async; track category.name) {
         <option>
-          {{category.name}}
+          {{ category.name }}
         </option>
       }
     </select>
@@ -14,7 +18,7 @@
         <option>Select sub-category</option>
         @for (subCat of subCategories; track subCat.id) {
           <option [value]="subCat.id">
-            {{subCat.name}}
+            {{ subCat.name }}
           </option>
         }
       </select>
@@ -25,10 +29,15 @@
       <option>Medium</option>
       <option>Hard</option>
     </select>
-    <button class="primary" id="createBtn" (click)="createQuiz(difficulty.value)">Create</button>
+    <button
+      class="primary"
+      id="createBtn"
+      (click)="createQuiz(difficulty.value)"
+    >
+      Create
+    </button>
   </div>
-
 </div>
 <div class="row">
-  <app-quiz [questions]="(questions$ | async) ?? []" ></app-quiz>
+  <app-quiz [questions]="questions()"></app-quiz>
 </div>
