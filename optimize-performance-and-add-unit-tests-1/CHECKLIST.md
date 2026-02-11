@@ -1,0 +1,4 @@
+- Click on the first movie's details button to see movie details.
+- The browser URL becomes: http://localhost:4200/details/e80d5a37-620e-4be2-92b9-fb1f5262494f/numbers and the movie numbers are displayed (box office, budget, and duration)
+- Click on the browser's "back" button. You're back on the main page and all movies are displayed.
+- Run "ng test" in a terminal. At least 3 unit tests should run and validate the filtering feature of `MoviesService`.
