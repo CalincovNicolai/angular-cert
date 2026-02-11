@@ -1,0 +1,8 @@
+@for (number of [1, 2, 3, 4, 5]; track number) {
+  <span
+    class="icon-star"
+    [class.active]="value >= number"
+    (click)="writeValue(number)"
+  >
+  </span>
+}

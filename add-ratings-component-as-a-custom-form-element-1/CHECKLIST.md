@@ -1,0 +1,5 @@
+- Navigate to http://localhost:4200/details/e80d5a37-620e-4be2-92b9-fb1f5262494f/my-data
+- The movie rating is set to 0 and no stars are highlighted in yellow color.
+- Click on the third star. The UI now shows a rating of 3 and the three first stars are highlighted in yellow color.
+- Click on the fifth star. The UI now shows a rating of 5 and all five stars are highlighted in yellow color.
+- Click on "People" and then click on "My data". The rating of 5 starts is still displayed with proper styling for all 5 stars.
