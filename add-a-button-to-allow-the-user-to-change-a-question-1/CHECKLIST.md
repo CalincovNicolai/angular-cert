@@ -1,0 +1,5 @@
+- Open the app and create a quiz. All questions must show the "Change question" button.
+- Select an answer for the first question.
+- Click on the "Change button" of the second question. The second question gets replaced with a new one.
+- The answer to the first question is still selected and wasn't lost in the process.
+- All "Change question" buttons are now removed from the screen.
