@@ -1,7 +1,10 @@
 export interface Category {
   id: number;
   name: string;
+  subCategories: SubCategory[];
 }
+
+export type SubCategory = Omit<Category, 'subCategories'>;
 
 export interface ApiQuestion {
   category: string;

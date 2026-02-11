@@ -1,23 +1,43 @@
 <div class="row">
   <div class="col-sm-11">
-    <select #category id="categorySelect">
+    <select
+      #category
+      id="categorySelect"
+      (change)="selectNewCategory(category.value)"
+    >
       <option>Select category</option>
-      @for (category of categories$ | async; track category) {
-        <option [value]="category.id">
-          {{category.name}}
+      @for (category of categories$ | async; track category.name) {
+        <option>
+          {{ category.name }}
         </option>
       }
     </select>
+    @let subCategories = currentCategory?.subCategories ?? [];
+    @if (subCategories.length > 0) {
+      <select #subCategory id="subCategorySelect">
+        <option>Select sub-category</option>
+        @for (subCat of subCategories; track subCat.id) {
+          <option [value]="subCat.id">
+            {{ subCat.name }}
+          </option>
+        }
+      </select>
+    }
     <select #difficulty id="difficultySelect">
       <option>Select difficulty</option>
       <option>Easy</option>
       <option>Medium</option>
       <option>Hard</option>
     </select>
-    <button class="primary" id="createBtn" (click)="createQuiz(category.value, difficulty.value)">Create</button>
+    <button
+      class="primary"
+      id="createBtn"
+      (click)="createQuiz(difficulty.value)"
+    >
+      Create
+    </button>
   </div>
-
 </div>
 <div class="row">
-  <app-quiz [questions]="(questions$ | async) ?? []" ></app-quiz>
+  <app-quiz [questions]="(questions$ | async) ?? []"></app-quiz>
 </div>
