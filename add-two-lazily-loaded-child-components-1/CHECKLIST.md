@@ -1,0 +1,5 @@
+- Click on the first movie's details button to see movie details.
+- The browser URL becomes: http://localhost:4200/details/e80d5a37-620e-4be2-92b9-fb1f5262494f/numbers and the movie numbers are displayed (box office, budget, and duration)
+- Click on the "People" button. The browser URL becomes: http://localhost:4200/details/e80d5a37-620e-4be2-92b9-fb1f5262494f/people
+- Movie people are displayed (producers and cinematographers)
+- Click on the "Numbers" button and the movie numbers replace people information on the screen.
