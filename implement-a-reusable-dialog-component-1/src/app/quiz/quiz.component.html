@@ -1,0 +1,19 @@
+@for (q of questions(); track q; let i = $index) {
+  <app-question [question]="q"
+    (change)="userAnswers[i] = $event">
+  </app-question>
+}
+<div>
+  @if (allAnswered()) {
+    <button class="inverse large" (click)="confirm.openModal()">
+      Submit
+    </button>
+  }
+</div>
+<app-dialog #confirm title="Are you sure?">
+  <div body>Please confirm you want to submit your quiz</div>
+  <div footer>
+    <button class="tertiary" (click)="submit()">OK</button>
+    <button class="secondary" (click)="confirm.close()">Not yet</button>
+  </div>
+</app-dialog>
