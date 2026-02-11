@@ -1,6 +1,7 @@
-import {Component, input} from '@angular/core';
-import {MovieDetails} from '../model/movie.model';
-import {NgOptimizedImage} from '@angular/common';
+import { Component, input } from '@angular/core';
+import { MovieDetails } from '../model/movie.model';
+import { NgOptimizedImage } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-movie-details',
@@ -8,7 +9,12 @@ import {NgOptimizedImage} from '@angular/common';
     <h1>{{ movie().title }}</h1>
     <div class="details">
       @if (movie().poster) {
-        <img [ngSrc]="movie().poster || ''" width="200" height="100" alt="Poster">
+        <img
+          [ngSrc]="movie().poster || ''"
+          width="200"
+          height="100"
+          alt="Poster"
+        />
       }
       <div>
         <p>
@@ -19,18 +25,14 @@ import {NgOptimizedImage} from '@angular/common';
     </div>
     <div>
       Display:
-      <button>Numbers</button>
-      <button>People</button>
+      <button routerLink="./numbers">Numbers</button>
+      <button routerLink="./people">People</button>
     </div>
-    <div>
-      TODO: Display child route here
-    </div>
+    <router-outlet></router-outlet>
   `,
-  styleUrls: [ 'movie-details.component.scss' ],
-  imports: [NgOptimizedImage]
+  styleUrls: ['movie-details.component.scss'],
+  imports: [NgOptimizedImage, RouterOutlet, RouterLink],
 })
 export class MovieDetailsComponent {
-
   protected movie = input.required<MovieDetails>();
 }
-
