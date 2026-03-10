@@ -14,6 +14,7 @@ export class VerifyComponent implements AfterViewInit {
   @ViewChildren('digitInput')
   private readonly digitInputs!: QueryList<ElementRef<HTMLInputElement>>;
 
+  protected readonly digitIndexes = [0, 1, 2, 3, 4, 5];
   protected readonly digits = Array.from({ length: 6 }, () => '');
 
   public ngAfterViewInit(): void {
