@@ -1,0 +1,42 @@
+<section class="verify-shell">
+  <form class="verify-card" #verifyForm="ngForm">
+    <p class="eyebrow">Two-factor authentication</p>
+    <h1>Verify your email code</h1>
+    <p class="description">
+      Paste the 6-digit code from your email to continue.
+    </p>
+
+    <div class="code-grid">
+      @for (index of digitIndexes; track index) {
+        <input
+          #digitInput
+          class="digit-input"
+          [class.filled]="digits[index]"
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          min="0"
+          max="9"
+          maxlength="1"
+          required
+          [attr.autocomplete]="index === 0 ? 'one-time-code' : null"
+          [name]="'digit' + index"
+          [ngModel]="digits[index]"
+          (ngModelChange)="onDigitChange(index, $event)"
+          (paste)="onPaste($event, index)"
+          (keydown)="onKeyDown($event, index)"
+          (focus)="selectInput($event)"
+          [attr.autofocus]="index === 0 ? '' : null"
+        />
+      }
+    </div>
+
+    <button
+      class="verify-button"
+      type="submit"
+      [disabled]="verifyForm.invalid"
+    >
+      Verify
+    </button>
+  </form>
+</section>

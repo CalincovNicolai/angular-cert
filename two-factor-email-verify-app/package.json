@@ -1,0 +1,26 @@
+{
+  "name": "two-factor-email-verify-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build"
+  },
+  "dependencies": {
+    "@angular/common": "^21.0.3",
+    "@angular/compiler": "^21.0.3",
+    "@angular/core": "^21.0.3",
+    "@angular/forms": "^21.0.3",
+    "@angular/platform-browser": "^21.0.3",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.0.2",
+    "@angular/cli": "^21.0.2",
+    "@angular/compiler-cli": "^21.0.3",
+    "typescript": "~5.9.3"
+  }
+}
